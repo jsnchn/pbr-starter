@@ -44,7 +44,7 @@ pnpm dev:server
 
 ### 3. Test the Connection
 
-Open the React app and click "Test API Connection" to verify the backend is working.
+Open the app at http://localhost:8090/ and click "Test API Connection" to verify the backend is working.
 
 ## Project Structure
 
