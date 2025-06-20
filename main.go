@@ -19,7 +19,7 @@ func main() {
 
         se.Router.GET("/api/hello", func(e *core.RequestEvent) error {
             return e.JSON(http.StatusOK, map[string]string{"message": "Hello from PocketBase!"})
-        }).Bind(apis.RequireAuth())
+        })
 
         return se.Next()
     })

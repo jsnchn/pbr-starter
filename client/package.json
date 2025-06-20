@@ -1,24 +1,30 @@
 {
-  "name": "giganttic-client",
+  "name": "pbv-starter-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --outDir ../pb_public",
+    "build": "tsc && vite build --outDir ../pb_public",
     "preview": "vite preview",
-    "lint": "biome check .",
-    "lint:fix": "biome check --apply .",
-    "format": "biome format --write ."
+    "lint": "biome lint src/",
+    "format": "biome format --write src/",
+    "check": "biome check --apply src/"
   },
   "dependencies": {
-    "pocketbase": "^0.20.0"
+    "pocketbase": "^0.20.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.4.1",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
+    "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }
 }
