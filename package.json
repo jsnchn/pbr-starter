@@ -1,0 +1,14 @@
+{
+  "name": "giganttic-com",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm dev:client\" \"pnpm dev:server\"",
+    "dev:client": "cd client && pnpm dev",
+    "dev:server": "air",
+    "build": "cd client && pnpm build",
+    "preview": "cd client && pnpm preview"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
