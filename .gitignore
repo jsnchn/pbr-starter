@@ -9,7 +9,7 @@
 *.test
 
 # Output of the go build command
-/pbv-starter
+/pbr-starter
 
 # Go workspace file
 go.work

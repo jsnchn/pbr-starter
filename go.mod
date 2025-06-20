@@ -1,4 +1,4 @@
-module pbv-starter
+module pbr-starter
 
 go 1.24
 
