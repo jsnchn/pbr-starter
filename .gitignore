@@ -18,7 +18,7 @@ go.work
 /pb_data/
 
 # PocketBase public directory (if you want to ignore it)
-# /pb_public/
+/pb_public/
 
 # PocketBase migrations (uncomment if you want to ignore)
 # /pb_migrations/
