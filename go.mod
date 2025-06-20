@@ -1,4 +1,4 @@
-module giganttic-com
+module pbv-starter
 
 go 1.24
 
