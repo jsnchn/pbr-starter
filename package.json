@@ -1,5 +1,5 @@
 {
-  "name": "pbr-starter",
+  "name": "spa-starter",
   "private": true,
   "scripts": {
     "dev": "concurrently \"pnpm watch:build\" \"pnpm dev:server\" ",
