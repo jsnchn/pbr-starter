@@ -19,5 +19,13 @@
       "semicolons": "asNeeded",
       "quoteStyle": "single"
     }
-  }
+  },
+  "overrides": [
+    {
+      "include": ["*.tsx", "*.jsx"],
+      "javascript": {
+        "globals": ["JSX"]
+      }
+    }
+  ]
 }
