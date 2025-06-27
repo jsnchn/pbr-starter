@@ -9,7 +9,7 @@
 *.test
 
 # Output of the go build command
-/pbr-starter
+/spa-starter
 
 # Go workspace file
 go.work

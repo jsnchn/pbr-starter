@@ -1,4 +1,4 @@
-module pbr-starter
+module spa-starter
 
 go 1.24
 
