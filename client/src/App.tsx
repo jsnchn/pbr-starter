@@ -1,19 +1,36 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PocketBase from 'pocketbase'
 
 const pb = new PocketBase('http://127.0.0.1:8090')
 
+type Toast = {
+  message: string
+  type: 'success' | 'error'
+}
+
 function App() {
-  const [apiResult, setApiResult] = useState<string>('')
+  const [toast, setToast] = useState<Toast | null>(null)
 
   const testApiConnection = async () => {
     try {
       const data = await pb.send('/api/hello', {})
-      setApiResult(`API Response: ${data.message}`)
+      setToast({ message: `API Response: ${data.message}`, type: 'success' })
     } catch (error) {
-      setApiResult(`Error: ${error instanceof Error ? error.message : 'Unknown error'}`)
+      setToast({
+        message: `Error: ${error instanceof Error ? error.message : 'Unknown error'}`,
+        type: 'error',
+      })
     }
   }
+
+  useEffect(() => {
+    if (toast) {
+      const timer = setTimeout(() => {
+        setToast(null)
+      }, 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [toast])
 
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center">
@@ -36,7 +53,7 @@ function App() {
             </div>
           </div>
           <div className="divider"></div>
-          <div className="card-actions justify-center">
+          <div className="card-actions justify-end">
             <button
               onClick={testApiConnection}
               className="btn btn-primary"
@@ -44,17 +61,21 @@ function App() {
               Test API Connection
             </button>
           </div>
-          {apiResult && (
-            <div className={`mt-4 p-4 rounded-box ${
-              apiResult.startsWith('Error')
-                ? 'bg-error text-error-content'
-                : 'bg-success text-success-content'
-            }`}>
-              {apiResult}
-            </div>
-          )}
         </div>
       </div>
+      {toast && (
+        <div className="toast toast-end">
+          <div
+            className={`alert ${
+              toast.type === 'success' ? 'alert-success' : 'alert-error'
+            }`}
+          >
+            <div>
+              <span>{toast.message}</span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
