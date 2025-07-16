@@ -1,11 +1,11 @@
-# Solidjs + Pocketbase Application Starter
+# React + Pocketbase Application Starter
 
-A full-stack application combining PocketBase backend with a Solidjs frontend.
+A full-stack application combining PocketBase backend with a React frontend.
 
 ## Prerequisites
 
 - [Go](https://golang.org/dl/) (for PocketBase backend)
-- [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.io/) (for Solidjs client)
+- [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.io/) (for React client)
 
 ## Quick Start
 
@@ -25,7 +25,7 @@ go mod tidy
 ### 2. Development
 
 ```bash
-# Start both Pocketbase server and Solidjs client concurrently
+# Start both Pocketbase server and React client concurrently
 pnpm dev
 ```
 
@@ -35,7 +35,7 @@ This will start:
 - Admin UI: http://localhost:8090/_/
 
 ```bash
-# Run Solidjs client only
+# Run React client only
 pnpm dev:client
 
 # Run PocketBase server only
@@ -50,10 +50,10 @@ Open the app at http://localhost:8090/ and click "Test API Connection" to verify
 
 ```
 ├── main.go              # PocketBase server with custom routes
-├── client/              # Solidjs frontend
+├── client/              # React frontend
 │   ├── src/
-│   │   ├── App.tsx      # Main Solidjs component
-│   │   ├── main.tsx     # Solidjs entry point
+│   │   ├── App.tsx      # Main React component
+│   │   ├── main.tsx     # React entry point
 │   │   └── style.css    # Tailwind CSS
 │   └── package.json     # Frontend dependencies
 ├── pb_migrations/       # Database migrations
@@ -80,7 +80,7 @@ Open the app at http://localhost:8090/ and click "Test API Connection" to verify
 - SQLite database
 
 **Frontend:**
-- Solidjs with TypeScript
+- React with TypeScript
 - Vite for development and building
 - Tailwind CSS for styling
 - Biome for linting and formatting
