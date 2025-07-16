@@ -83,4 +83,5 @@ Open the app at http://localhost:8090/ and click "Test API Connection" to verify
 - React with TypeScript
 - Vite for development and building
 - Tailwind CSS for styling
+- DaisyUI for utility class components
 - Biome for linting and formatting
