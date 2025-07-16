@@ -16,37 +16,43 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-      <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
-          <div className="max-w-md mx-auto">
-            <div className="divide-y divide-gray-200">
-              <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                <h1 className="text-2xl font-bold text-gray-900 mb-4">React + Pocketbase <br/> Application Starter</h1>
-                <p>This is your client application running with:</p>
-                <ul className="list-disc space-y-2 ml-4">
-                  <li>React for UI components</li>
-                  <li>TypeScript for type safety</li>
-                  <li>Vite for fast development</li>
-                  <li>Tailwind CSS for styling</li>
+    <div className="min-h-screen bg-base-200 flex items-center justify-center">
+      <div className="card w-full max-w-2xl bg-base-100 shadow-xl">
+        <div className="card-body">
+          <div className="hero bg-base-200 rounded-box p-10">
+            <div className="hero-content text-center">
+              <div className="max-w-md">
+                <h1 className="text-5xl font-bold">React + Pocketbase</h1>
+                <p className="py-6">This is your client application running with:</p>
+                <ul className="list-disc space-y-2 ml-4 text-left">
                   <li>PocketBase for backend</li>
+                  <li>React for clientside SPA</li>
+                  <li>TypeScript for type safety</li>
+                  <li>Tailwind CSS for styling</li>
+                  <li>DaisyUI for beautiful components</li>
+                  <li>Vite for fast development</li>
                 </ul>
-                <button 
-                  onClick={testApiConnection}
-                  className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                >
-                  Test API Connection
-                </button>
-                {apiResult && (
-                  <div className={`mt-4 p-4 border rounded ${apiResult.startsWith('Error') 
-                      ? 'bg-red-100 border-red-400 text-red-700'
-                      : 'bg-green-100 border-green-400 text-green-700'}`}>
-                    {apiResult}
-                  </div>
-                )}
               </div>
             </div>
           </div>
+          <div className="divider"></div>
+          <div className="card-actions justify-center">
+            <button
+              onClick={testApiConnection}
+              className="btn btn-primary"
+            >
+              Test API Connection
+            </button>
+          </div>
+          {apiResult && (
+            <div className={`mt-4 p-4 rounded-box ${
+              apiResult.startsWith('Error')
+                ? 'bg-error text-error-content'
+                : 'bg-success text-success-content'
+            }`}>
+              {apiResult}
+            </div>
+          )}
         </div>
       </div>
     </div>
