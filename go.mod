@@ -1,4 +1,4 @@
-module spa-starter
+module spark-kit
 
 go 1.24
 

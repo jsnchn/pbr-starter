@@ -9,7 +9,7 @@
 *.test
 
 # Output of the go build command
-/spa-starter
+/spark-kit
 
 # Go workspace file
 go.work

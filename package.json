@@ -1,5 +1,5 @@
 {
-  "name": "spa-starter",
+  "name": "spark-kit",
   "private": true,
   "scripts": {
     "dev": "concurrently \"pnpm watch:build\" \"pnpm dev:server\" ",
