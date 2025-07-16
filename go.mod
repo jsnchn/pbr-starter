@@ -1,4 +1,4 @@
-module spark-kit
+module spar-kit
 
 go 1.24
 

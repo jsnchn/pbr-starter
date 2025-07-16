@@ -1,4 +1,4 @@
-# React + Pocketbase Application Starter
+# spar-kit
 
 A full-stack application combining PocketBase backend with a React frontend.
 
