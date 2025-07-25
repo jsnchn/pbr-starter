@@ -4,7 +4,7 @@ node = "24.2.0"
 
 [tasks.dev]
 description = "Run both web client and server concurrently"
-depends = ["dev-web", "dev-server"]
+depends = ["watch-build", "dev-server"]
 
 [tasks.dev-web]
 description = "Run web client only (Vite dev server)"
