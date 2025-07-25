@@ -1,3 +1,27 @@
 [tools]
 go = "1.24.4"
 node = "24.2.0"
+
+[tasks.dev]
+description = "Run both web client and server concurrently"
+depends = ["dev-web", "dev-server"]
+
+[tasks.dev-web]
+description = "Run web client only (Vite dev server)"
+run = "cd web && pnpm dev"
+
+[tasks.dev-server]
+description = "Run server only (Go with Air hot reload)"
+run = "cd server && air"
+
+[tasks.build]
+description = "Build web client to pb_public directory"
+run = "cd web && pnpm build"
+
+[tasks.preview]
+description = "Preview web client build"
+run = "cd web && pnpm preview"
+
+[tasks.watch-build]
+description = "Watch for changes and build web client"
+run = "cd web && pnpm build --watch"

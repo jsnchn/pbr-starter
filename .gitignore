@@ -15,10 +15,10 @@
 go.work
 
 # PocketBase data directory
-/pb_data/
+/server/pb_data/
 
 # PocketBase public directory (if you want to ignore it)
-/pb_public/
+/server/pb_public/
 
 # PocketBase migrations (uncomment if you want to ignore)
 # /pb_migrations/
@@ -45,7 +45,7 @@ Thumbs.db
 .scratch/
 
 # Temporary files
-/tmp/
+/server/tmp/
 
 # Environment files
 .env
