@@ -4,6 +4,7 @@ A full-stack application combining PocketBase backend with a React frontend.
 
 ## Prerequisites
 
+- [Mise](https://mise.jdx.dev) (for runtime version management, dev tooling, and task running)
 - [Go](https://golang.org/dl/) (for PocketBase backend)
 - [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.io/) (for React client)
 
@@ -12,34 +13,33 @@ A full-stack application combining PocketBase backend with a React frontend.
 ### 1. Setup
 
 ```bash
-# Install root dependencies
-pnpm i
+# Mark config as trusted
+mise trust
 
 # Install client dependencies
-cd client && pnpm i
+cd web && pnpm i
 
 # Tidy Go modules
-go mod tidy
+cd server && go mod tidy
 ```
 
 ### 2. Development
 
 ```bash
-# Start both Pocketbase server and React client concurrently
-pnpm dev
+# Start both Pocketbase server and web client concurrently
+mise dev
 ```
-
-This will start:
-- PocketBase server + client: http://localhost:8090
+This will build the web client and serve it from the Pocketbase url:
+- PocketBase server + web client: http://localhost:8090
 - REST API: http://localhost:8090/api/
 - Admin UI: http://localhost:8090/_/
 
 ```bash
-# Run React client only
-pnpm dev:client
+# Run React client only, served from http://localhost:3000
+mise dev-web
 
 # Run PocketBase server only
-pnpm dev:server
+pnpm dev-server
 ```
 
 ### 3. Test the Connection
@@ -63,11 +63,11 @@ Open the app at http://localhost:8090/ and click "Test API Connection" to verify
 ## Available Scripts
 
 ### Root
-- `pnpm dev` - Start both backend and frontend concurrently
-- `pnpm build` - Build frontend for production
-- `pnpm watch:build` - Watch and rebuild frontend
+- `mise dev` - Start both backend and frontend concurrently
+- `mise build` - Build frontend for production
+- `mise watch:build` - Watch and rebuild frontend
 
-### Frontend (client/)
+### Frontend (web/)
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production (outputs to ../pb_public)
 - `pnpm lint` - Run linter
