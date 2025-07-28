@@ -1,4 +1,4 @@
-# Agent Instructions for spar-kit
+# Agent Instructions for sparkit
 
 ## Build/Lint/Test Commands
 ```bash

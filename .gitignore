@@ -9,7 +9,7 @@
 *.test
 
 # Output of the go build command
-/spar-kit
+/sparkit
 
 # Go workspace file
 go.work
